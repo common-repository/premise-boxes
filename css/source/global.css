@@ -1,0 +1,167 @@
+/**
+ * Pboxes Dailog Styles
+ *
+ * Scoped to wp-admin, since this should not run on the frontend.
+ * written in a mobile-first approach - The default styles are for mobile
+ * and we correct for bigger screens.
+ */
+body.wp-admin #pboxes_dialog {
+	position: fixed;
+	top: 10%;
+	right: 10%;
+	width: 80%;
+	height: 700px;
+	max-width: 600px;
+	max-height: 80%;
+	z-index: 100101; /* Important to stay above the shortcode UI controls (100100) */
+	background: rgba(255, 255, 255, 1);
+	/*overflow: auto;*/
+	border: 1px solid #888;
+	box-sizing: border-box;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.pboxes-dialog-body {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+.pboxes-dialog-controls {
+	position: relative;
+	float: right;
+	height: 40px;
+	width: auto;
+}
+
+.pboxes-dialog-header {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #888;
+	z-index: 2;
+	background-color: #fff;
+}
+
+.pboxes-dialog-header h2 {
+	margin: 0;
+	line-height: 40px;
+	font-size: 20px;
+	text-indent: 20px;
+}
+
+.pboxes-dialog-controls .pboxes-dialog-control {
+	position: relative;
+	height: 40px;
+	width: 40px;
+	border-left: 1px solid #888;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	box-sizing: border-box;
+}
+
+.pboxes-dialog-controls .pboxes-dialog-close {
+	cursor: pointer;
+}
+
+.pboxes-dialog-controls .pboxes-dialog-tooltip {
+	cursor: help;
+}
+
+.pboxes-dialog-controls .pboxes-dialog-tooltip span {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	display: block;
+	width: 300px;
+	height: auto;
+	border: 1px solid #888;
+	background-color: #fff;
+	z-index: 9999;
+	margin-top: 5px;
+	padding: 10px;
+	transition: opacity .4s ease;
+	visibility: hidden;
+	opacity: 0;
+	box-sizing: border-box;
+	text-align: left;
+	font-size: 12px;
+	line-height: 1.2;
+}
+
+.pboxes-dialog-controls .pboxes-dialog-tooltip:hover span {
+	visibility: visible;
+	opacity: 1;
+}
+
+/*
+	The form
+ */
+#pboxes-dialog-form {
+	padding: 20px;
+	overflow: auto;
+}
+
+#pboxes-dialog-form #pbox_innercontent_ifr {
+	min-height: 300px;
+}
+
+#pboxes-dialog-form .pboxes-box-submit {
+	margin-top: 20px;
+}
+
+#pboxes-content-editor {
+	position: relative;
+	min-height: 485px; /* Editor is at least 300px */
+}
+
+#pboxes-content-editor .pboxes-code-editor,
+#pboxes-content-editor .pboxes-wysiwyg-editor {
+	position: absolute;
+	top: 30px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	opacity: 0;
+	transition: opacity .2s ease;
+	z-index: 0;
+}
+
+#pboxes-content-editor .pboxes-code-editor.pboxes-show,
+#pboxes-content-editor .pboxes-wysiwyg-editor.pboxes-show {
+	opacity: 1;
+	z-index: 1;
+}
+
+
+.pboxes-dialog-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border-top: 1px solid #888;
+	z-index: 2;
+	background-color: #fff;
+}
+
+#pboxes-submit-box {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+	border-left: 1px solid #888;
+	color: #222444;
+	text-decoration: none;
+}

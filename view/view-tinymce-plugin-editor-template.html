@@ -1,0 +1,12 @@
+<script type="text/html" id="tmpl-editor-pwp-boxes">
+	<div class="pboxes-box {{ data.pbox_class }}" id="{{ data.pbox_id }}">
+		<div class="pboxes-box-content">
+			<# if ( data.pbox_innercontent ) {
+				var content = decodeURIComponent(data.pbox_innercontent); #>
+				{{{content}}}
+			<# } else { #>
+					<p>Empty Box</p>
+			<# } #>
+		</div>
+	</div>
+</script>
